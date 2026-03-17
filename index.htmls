@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input id="prompt" placeholder="Ask AI">
+<button onclick="send()">Send</button>
+<div id="response"></div>
+
+<script>
+async function send() {
+  const prompt = document.getElementById("prompt").value;
+
+  const res = await fetch("https://11434/api/generate", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      model: "llama3",
+      prompt: prompt,
+      stream: false
+    })
+  });
+
+  const data = await res.json();
+  document.getElementById("response").innerText = data.response;
+}
+</script>
+</body>
+</html>
