@@ -9,7 +9,7 @@
 async function send() {
   const prompt = document.getElementById("prompt").value;
 
-  const res = await fetch("https://11434/api/generate", {
+  const res = await fetch("fetch("https://rapturously-pinnal-reinaldo.ngrok-free.dev/api/generate")", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
